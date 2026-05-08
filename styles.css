@@ -1,260 +1,574 @@
-﻿/*
-.hero__my {
-  padding: 80px;
-  /*border: 1px solid #ed6fe9;*/
-  border-image-source: url('border.png');
-  /*border-slice: 30;*/
-}*/
-
-/*
-.hero__my {
-  padding: 80px;
-  border: 1px solid #ed6fe9;
-  border-image-source: url('border.png'); /* путь к изображению в сети */
-  border-image-slice: 30;
-  border-image-repeat: round; /* или stretch, repeat */
-  /*border-image-width: 1px;*/
-}*/
-
-
-.hero__my {
-  border: 10px solid transparent;
-  padding: 15px;
-  border-image-source: url(border.png) 20% round;
-  /*padding: 80px;
-  border: 1px solid;
-  border-image-source: linear-gradient(45deg, #ed6fe9, #9b59b6);
-  border-image-slice: 1;
-  border-image-width: 1px;*/
-}
-
-
-
-/** {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}*/
-
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #102A43;
+  
+  margin: 0;
+  min-height: 300vh; /* Просто для появления скролла */
+  
+  background-color: #F0F7FF;
+  
+  /* background-image: url("../img/background.jpg"); */
+  /* background-size: cover;      /* Растягивает изображение на весь экран без искажений */ 
+  /* background-position: center; /* Центрирует изображение */ 
+  /* background-repeat: no-repeat; /* Запрещает повторение изображения */ 
+  /* background-attachment: fixed;  /* Фиксирует фон при прокрутке (эффект параллакса) */  
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Hero section */
-/*.hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-}*/
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.btn-primary {
-    background-color: #ff6b6b;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #ff5252;
-    transform: translateY(-3px);
-}
-
-.btn-secondary {
-    background-color: #4ecdc4;
-    color: white;
-}
-
-.btn-secondary:hover {
-    background-color: #40c4b4;
-}
-
-/* Features section */
-.features {
-    padding: 80px 0;
-    background-color: #f8f9fa;
-}
-
-.features h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 2.5rem;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.feature-card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.feature-card h3 {
-    color: #667eea;
-    margin-bottom: 15px;
-}
-
-/* Contact section */
-.contact {
-    padding: 80px 0;
-}
-
-.contact h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.5rem;
-}
-
-#contactForm {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#contactForm input,
-#contactForm textarea {
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-#contactForm input:focus,
-#contactForm textarea:focus {
-    outline: none;
-    border-color: #667eea;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-.hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #3fff;
-}
-
-.hero::before {
+body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-image: url('bg.jpg'); /* замените на реальный URL фонового изображения */
-  background-size: cover;
-  background-position: center;
-  opacity: .02;
-  z-index: 1;
+  
+  /* Растягиваем по ширине, высота — какая получится по пропорциям */
+  background-image: url("../img/background.jpg");
+  background-size: 100% auto; 
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: -1;
+
+  /* Высота фона будет зависеть от ширины экрана и пропорций картинки */
+  /* Используем aspect-ratio вашей картинки (например, 16/9 или 4/3), 
+     чтобы браузер заранее знал высоту фона */
+  aspect-ratio: 815 / 768; 
+  height: auto;
+  min-height: 100vh;
+
+  animation: move-bg linear both;
+  animation-timeline: scroll(root);
+}
+
+@keyframes move-bg {
+  from { transform: translateY(0); }
+  /* Докручиваем фон до его нижнего края */
+  to { transform: translateY(calc(100vh - 100%));
+  }
+}
+
+header {
+ 
+}
+main {
+  
+  background-repeat: no-repeat, no-repeat;
+  background-position: -100% 50%, center;
+  background-size: auto, cover;
+  height: 860px;
+  padding: 200px 5% 0;
 }
 
 
-.hero__content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 0 20px;
+/* Контейнер */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-.hero__title {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  font-weight: 700;
-  line-height: 1.2;
+/* Шапка */
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
 }
 
-.hero__subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
-}
-
-.hero__button {
-  display: inline-block;
-  background-color: #ff6b35;
-  color: #fff;
-  padding: 15px 40px;
+.link-logo {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  font-weight: 600;
+}
+
+.logo {
+  height: 42px;
+  width: auto;
+}
+
+.link-logo__divider {
+  width: 1px;
+  background: #ddd;
+  height: 30px;
+  margin: 0 10px;
+}
+
+.logo-text-hide {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* Контакты в шапке */
+.col-contacts-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.col-social {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.title-social {
+  font-size: 12px;
+  color: #888;
+  text-align: right;
+}
+
+.title-social--hide {
+  display: none;
+}
+
+.social__link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social__img {
+  width: 36px;
+  height: 36px;
+}
+
+.call {
+  color: inherit;
+  text-decoration: none;
+}
+
+.col-phone {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.col-phone--hide {
+  display: none;
+}
+
+.box {
+  text-align: right;
+}
+
+.phone-link {
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.time {
+  font-size: 12px;
+  color: #888;
+}
+
+.btn-header {
+  background: #007cba;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
   transition: background-color 0.3s;
 }
 
-.hero__button:hover {
-  background-color: #e55a2b;
+.btn-header:hover {
+  background: #006ba1;
+}
+
+/* Навигационное меню */
+.container-nav {
+  padding: 15px 0;
+}
+
+.menu-button {
+  display: none; /* Показываем только на мобильных */
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.line-1, .line-2, .line-3 {
+  width: 25px;
+  height: 3px;
+  background: #333;
+}
+
+.nav-menu {
+  display: flex;
+}
+
+.simple-bar {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.simple-bar__col {
+  position: relative;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #007cba;
+}
+
+.line-nav {
+  height: 2px;
+  background: #007cba;
+  width: 0;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.simple-bar__col:hover .line-nav {
+  width: 100%;
+}
+
+/* Основной контент */
+.container-main {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.editor-h1 h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.editor-h1 strong {
+  color: #007cba;
+}
+
+.box-desc-points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  color: #444;
+}
+
+.img-points {
+  width: 32px;
+  height: 8px;
+}
+
+.box-desc-points strong {
+  color: #e74c3c;
+}
+
+.editor-main-desc p {
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: #666;
+}
+
+.row-btns {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #007cba;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background: #006ba1;
+}
+
+.button--light {
+  background: transparent;
+  color: #007cba;
+  border: 2px solid #007cba;
+}
+
+.button--light:hover {
+  background: #007cba;
+  color: white;
 }
 
 /* Адаптивность */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 10px;
+  }
+  .simple-bar {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .editor-h1 h1 {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .hero__title {
-    font-size: 2.5rem;
+  .container-header {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
   }
-  
-  .hero__subtitle {
-    font-size: 1.2rem;
+
+  .col-phone {
+    display: block;
   }
-  
-  .hero__button {
-    padding: 12px 30px;
-    font-size: 1rem;
+
+  .title-social {
+    display: block;
+    font-size: 11px;
+    text-align: center;
   }
+
+  .logo-text-hide {
+    display: none;
+  }
+
+  .menu-button {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none; /* Скрываем меню, показываем при клике на кнопку */
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.open {
+    display: block; /* Класс для показа меню */
+  }
+
+  .simple-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .simple-bar__col {
+    text-align: center;
+  }
+
+  .line-nav {
+    width: 0 !important; /* Убираем подчёркивание на мобильных */
+  }
+
+  .editor-h1 h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .box-desc-points {
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    max-width: 300px;
+    margin: 0 auto 25px;
+  }
+
+  .img-points {
+    width: 24px;
+    height: 6px;
+  }
+
+  .box-desc-points div {
+    font-size: 16px;
+  }
+
+  .editor-main-desc p {
+    font-size: 14px;
+    max-width: 100%;
+    margin: 0 auto 25px;
+  }
+
+  .row-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  .col-social {
+    gap: 10px;
+  }
+
+  .social__img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .phone-link {
+    font-size: 14px;
+  }
+
+  .time {
+    font-size: 11px;
+  }
+
+  .btn-header {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Стили для очень маленьких экранов (смартфоны) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 8px;
+  }
+
+  .container-header {
+    padding: 8px 0;
+    gap: 8px;
+  }
+
+  .logo {
+    height: 36px;
+  }
+
+  .link-logo__divider {
+    height: 24px;
+  }
+
+  .col-contacts-header {
+    gap: 12px;
+  }
+
+  .col-social {
+    gap: 8px;
+  }
+
+  .social__img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .phone-link {
+    font-size: 13px;
+  }
+
+  .time {
+    font-size: 10px;
+  }
+
+  .btn-header {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .editor-h1 h1 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  .box-desc-points div {
+    font-size: 14px;
+  }
+
+  .editor-main-desc p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .container-main {
+    padding: 40px 0;
+  }
+
+  .simple-bar {
+    gap: 12px;
+  }
+}
+
+/* Поддержка тёмной темы */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  .nav-menu {
+    background: #2d2d2d;
+  }
+
+  .link {
+    color: #d0d0d0;
+  }
+
+  .link:hover {
+    color: #66b3ff;
+  }
+
+  .phone-link {
+    color: #ffffff;
+  }
+
+  .time, .title-social {
+    color: #a0a0a0;
+  }
+
+  .editor-h1 h1 {
+    color: #f0f0f0;
+  }
+
+  .editor-h1 strong {
+    color: #66b3ff;
+  }
+
+  .box-desc-points strong {
+    color: #ff6b6b;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* стили для планшетов */
+}
+@media (max-width: 480px) {
+  /* стили для смартфонов */
 }
