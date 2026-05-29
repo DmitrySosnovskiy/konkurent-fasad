@@ -1,19 +1,39 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300; /* Тонкое начертание Light */
   line-height: 1.5;
   color: #102A43;
-  
-  margin: 0;
-  min-height: 300vh; /* Просто для появления скролла */
-  
   background-color: #F0F7FF;
-  
-  /* background-image: url("../img/background.jpg"); */
-  /* background-size: cover;      /* Растягивает изображение на весь экран без искажений */ 
-  /* background-position: center; /* Центрирует изображение */ 
-  /* background-repeat: no-repeat; /* Запрещает повторение изображения */ 
-  /* background-attachment: fixed;  /* Фиксирует фон при прокрутке (эффект параллакса) */  
+  min-height: 100vh;
+  padding-bottom: 128px;
 }
+
+p {
+  font-weight: 400; /* Обычное начертание Regular */
+}
+
+h1, h2 {
+  font-weight: 500; /* Полужирное начертание Medium */
+}
+
+h1 {
+	font-size: 32px;
+}
+
+h2 {
+	font-size: 22px;
+}
+
+a {color: #102A43;}
 
 body::before {
   content: "";
@@ -47,528 +67,186 @@ body::before {
   }
 }
 
+header, main, section, footer {
+  width: 1300px; /* фиксированная ширина */
+  max-width: 80%; /* не шире экрана на мобильных */
+  margin: 12px auto; /* центрирование */
+  padding: 32px; /* отступы по бокам */
+  background: #E1EFFA;
+  border-radius: 32px;
+}
+
 header {
- 
-}
-main {
-  
-  background-repeat: no-repeat, no-repeat;
-  background-position: -100% 50%, center;
-  background-size: auto, cover;
-  height: 860px;
-  padding: 200px 5% 0;
-}
-
-
-/* Контейнер */
-.container {
-  width: 100%;
-  max-width: 1200px;
+  position: sticky;
+  top: 10px;
+  z-index: 1001; /* Чтобы меню было поверх остального контента */
+  box-shadow: 0 0 12px rgba(0,0,0,0.25);
+  width: fit-content;
   margin: 0 auto;
-  padding: 0 15px;
+
+  padding: 8px;
+  border-radius: 8px;
 }
 
-/* Шапка */
-.container-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.link-logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo {
-  height: 42px;
-  width: auto;
-}
-
-.link-logo__divider {
-  width: 1px;
-  background: #ddd;
-  height: 30px;
-  margin: 0 10px;
-}
-
-.logo-text-hide {
-  margin-left: 10px;
-  font-size: 14px;
-  color: #666;
-  white-space: nowrap;
-}
-
-/* Контакты в шапке */
-.col-contacts-header {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.col-social {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.title-social {
-  font-size: 12px;
-  color: #888;
-  text-align: right;
-}
-
-.title-social--hide {
-  display: none;
-}
-
-.social__link {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.social__img {
-  width: 36px;
-  height: 36px;
-}
-
-.call {
-  color: inherit;
-  text-decoration: none;
-}
-
-.col-phone {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.col-phone--hide {
-  display: none;
-}
-
-.box {
-  text-align: right;
-}
-
-.phone-link {
-  font-weight: bold;
-  color: #000;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.time {
-  font-size: 12px;
-  color: #888;
+.contacts-top {
+	display: flex;
+	align-items: center;
+	justify-content: center; /* центрирование по горизонтали */
+	gap: 35px;
 }
 
 .btn-header {
-  background: #007cba;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background-color 0.3s;
+	background-color: #2468A2;
+	color: #FFFFFF;
+	border-radius: 25px; /* Закругленные углы (50% сделали бы его почти кругом) */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    transition: all 0.3s ease; /* Плавный переход при наведении */
+	font-weight: 500;
+    font-size: 16px;
 }
 
 .btn-header:hover {
-  background: #006ba1;
+	background-color: #3077b7;
 }
 
-/* Навигационное меню */
-.container-nav {
-  padding: 15px 0;
-}
-
-.menu-button {
-  display: none; /* Показываем только на мобильных */
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.line-1, .line-2, .line-3 {
-  width: 25px;
-  height: 3px;
-  background: #333;
-}
-
-.nav-menu {
-  display: flex;
-}
-
-.simple-bar {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-}
-
-.simple-bar__col {
-  position: relative;
-}
-
-.link {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.link:hover {
-  color: #007cba;
-}
-
-.line-nav {
-  height: 2px;
-  background: #007cba;
-  width: 0;
-  transition: width 0.3s;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-}
-
-.simple-bar__col:hover .line-nav {
-  width: 100%;
-}
-
-/* Основной контент */
-.container-main {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.editor-h1 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #222;
-}
-
-.editor-h1 strong {
-  color: #007cba;
-}
-
-.box-desc-points {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
-  font-size: 18px;
-  color: #444;
-}
-
-.img-points {
-  width: 32px;
-  height: 8px;
-}
-
-.box-desc-points strong {
-  color: #e74c3c;
-}
-
-.editor-main-desc p {
-  font-size: 16px;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  color: #666;
-}
-
-.row-btns {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.button {
-  display: inline-block;
-  padding: 12px 30px;
-  background: #007cba;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: background 0.3s;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.button:hover {
-  background: #006ba1;
-}
-
-.button--light {
-  background: transparent;
-  color: #007cba;
-  border: 2px solid #007cba;
-}
-
-.button--light:hover {
-  background: #007cba;
-  color: white;
-}
-
-/* Адаптивность */
-@media (max-width: 992px) {
-  .container {
-    padding: 0 10px;
-  }
-  .simple-bar {
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .editor-h1 h1 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .container-header {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px 0;
+nav {
+  @supports (corner-shape: squircle) {
+    border-radius: 24px;
+    border-shape: squircle;
   }
 
-  .col-phone {
-    display: block;
+  ul:has(:not(:hover)) {
+    anchor-name: --test;
   }
 
-  .title-social {
-    display: block;
-    font-size: 11px;
-    text-align: center;
+  &::before {
+    background-attachment: fixed;
+    background-color: #C8DFF0;
   }
 
-  .logo-text-hide {
-    display: none;
+  &::after {
+    backdrop-filter: blur(2px);
+    background-color: hsl(200 100% 100% / 0.1);
+    z-index: -1;
   }
 
-  .menu-button {
+  & > ul {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -3;
+      inset: -8px;
+      border-radius: 8px;
+
+      @supports (corner-shape: squircle) {
+        border-radius: 24px;
+        corner-shape: squircle;
+      }
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    border-radius: 8px;
+
+    position-anchor: --test;
+    position: absolute;
+    top: calc(anchor(bottom) - 4px);
+    left: calc(anchor(left) + 1rem);
+    right: calc(anchor(right) + 1rem);
+    bottom: anchor(bottom);
+
+    transition: 500ms;
+    transition-timing-function: linear(
+      0,
+      0.008 1.1%,
+      0.031 2.2%,
+      0.129 4.8%,
+      0.257 7.2%,
+      0.671 14.2%,
+      0.789 16.5%,
+      0.881 18.6%,
+      0.957 20.7%,
+      1.019 22.9%,
+      1.063 25.1%,
+      1.094 27.4%,
+      1.114 30.7%,
+      1.112 34.5%,
+      1.018 49.9%,
+      0.99 59.1%,
+      1
+    );
+  }
+
+  &:has(a:hover)::before,
+  &:has(a:hover)::after {
+    @supports (corner-shape: squircle) {
+      corner-shape: squircle;
+      border-radius: 50%;
+    }
+    top: anchor(top);
+    left: anchor(left);
+    right: anchor(right);
+  }
+
+  &:has(li:first-of-type a:hover)::before,
+  &:has(li:first-of-type a:hover)::after {
+    @supports (corner-shape: squircle) {
+      border-radius: 32px 50% 50% 32px;
+    }
+  }
+
+  &:has(li:last-of-type a:hover)::before,
+  &:has(li:last-of-type a:hover)::after {
+    @supports (corner-shape: squircle) {
+      border-radius: 50% 32px 32px 50%;
+    }
+  }
+
+  > ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
     display: flex;
   }
 
-  .nav-menu {
-    display: none; /* Скрываем меню, показываем при клике на кнопку */
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    padding: 20px 0;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  }
+  a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
 
-  .nav-menu.open {
-    display: block; /* Класс для показа меню */
-  }
-
-  .simple-bar {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .simple-bar__col {
-    text-align: center;
-  }
-
-  .line-nav {
-    width: 0 !important; /* Убираем подчёркивание на мобильных */
-  }
-
-  .editor-h1 h1 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-  }
-
-  .box-desc-points {
-    flex-direction: column;
-    gap: 10px;
-    text-align: left;
-    max-width: 300px;
-    margin: 0 auto 25px;
-  }
-
-  .img-points {
-    width: 24px;
-    height: 6px;
-  }
-
-  .box-desc-points div {
-    font-size: 16px;
-  }
-
-  .editor-main-desc p {
-    font-size: 14px;
-    max-width: 100%;
-    margin: 0 auto 25px;
-  }
-
-  .row-btns {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .button {
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
-    padding: 12px 20px;
-    font-size: 15px;
-  }
-
-  .col-social {
-    gap: 10px;
-  }
-
-  .social__img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .phone-link {
-    font-size: 14px;
-  }
-
-  .time {
-    font-size: 11px;
-  }
-
-  .btn-header {
-    padding: 8px 16px;
-    font-size: 13px;
+    &:hover {
+      position: relative;
+      anchor-name: --test;
+    }
   }
 }
 
-/* Стили для очень маленьких экранов (смартфоны) */
-@media (max-width: 480px) {
-  .container {
-    padding: 0 8px;
-  }
-
-  .container-header {
-    padding: 8px 0;
-    gap: 8px;
-  }
-
-  .logo {
-    height: 36px;
-  }
-
-  .link-logo__divider {
-    height: 24px;
-  }
-
-  .col-contacts-header {
-    gap: 12px;
-  }
-
-  .col-social {
-    gap: 8px;
-  }
-
-  .social__img {
-    width: 28px;
-    height: 28px;
-  }
-
-  .phone-link {
-    font-size: 13px;
-  }
-
-  .time {
-    font-size: 10px;
-  }
-
-  .btn-header {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
-  .editor-h1 h1 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-  }
-
-  .box-desc-points div {
-    font-size: 14px;
-  }
-
-  .editor-main-desc p {
-    font-size: 13px;
-    margin-bottom: 20px;
-  }
-
-  .button {
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-
-  .container-main {
-    padding: 40px 0;
-  }
-
-  .simple-bar {
-    gap: 12px;
-  }
+main {
+	text-align: center;
 }
 
-/* Поддержка тёмной темы */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-  }
-
-  .nav-menu {
-    background: #2d2d2d;
-  }
-
-  .link {
-    color: #d0d0d0;
-  }
-
-  .link:hover {
-    color: #66b3ff;
-  }
-
-  .phone-link {
-    color: #ffffff;
-  }
-
-  .time, .title-social {
-    color: #a0a0a0;
-  }
-
-  .editor-h1 h1 {
-    color: #f0f0f0;
-  }
-
-  .editor-h1 strong {
-    color: #66b3ff;
-  }
-
-  .box-desc-points strong {
-    color: #ff6b6b;
-  }
+.main-advantages {
+	display: flex;
+	justify-content: space-between;
+	background-color: #F0F7FF;
+	border-radius: 24px;
 }
 
-
-@media (max-width: 768px) {
-  /* стили для планшетов */
+.main-items {
+	width: 30%;              /* Ширина каждого внутреннего div (примерно треть) */
+	padding: 10px;
+	box-sizing: border-box;
 }
-@media (max-width: 480px) {
-  /* стили для смартфонов */
+
+.main-items img {
+	border-radius: 16px;
+}
+
+.main-items__title {
+	font-weight: 500;
 }
