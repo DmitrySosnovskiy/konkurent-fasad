@@ -237,16 +237,36 @@ main {
 	border-radius: 24px;
 }
 
-.main-items {
-	width: 30%;              /* Ширина каждого внутреннего div (примерно треть) */
+.main-examples {
+	display: flex;
+	justify-content: space-between;
+	border-radius: 24px;
+}
+
+.main-img-examples {
+	width: 30%; /* Ширина каждого внутреннего div (примерно треть) */
 	padding: 10px;
 	box-sizing: border-box;
 }
 
-.main-items img {
+.main-items {
+	width: 30%; /* Ширина каждого внутреннего div (примерно треть) */
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.main-img-examples {
+	width: 300px;
+    height: 300px;
+	border-radius: 24px;
+}
+
+.main-img-bullets {
+	width: 100px;
+    height: 100px;
 	border-radius: 16px;
 }
 
-.main-items__title {
+.main-items-title {
 	font-weight: 500;
 }
