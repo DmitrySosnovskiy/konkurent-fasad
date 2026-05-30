@@ -230,23 +230,28 @@ main {
 	text-align: center;
 }
 
+.main-examples {
+	display: flex;
+	justify-content: space-between;
+}
+
+.main-examples-container {
+	width: 25%; /* Ширина каждого внутреннего div (примерно четверть) */
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.main-examples-container img {
+	width: 250px;
+	height: 250px;
+	border-radius: 24px;
+}
+
 .main-advantages {
 	display: flex;
 	justify-content: space-between;
 	background-color: #F0F7FF;
 	border-radius: 24px;
-}
-
-.main-examples {
-	display: flex;
-	justify-content: space-between;
-	border-radius: 24px;
-}
-
-.main-img-examples {
-	width: 30%; /* Ширина каждого внутреннего div (примерно треть) */
-	padding: 10px;
-	box-sizing: border-box;
 }
 
 .main-items {
