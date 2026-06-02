@@ -74,6 +74,7 @@ header, main, section, footer {
   padding: 32px; /* отступы по бокам */
   background: #E1EFFA;
   border-radius: 32px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
 }
 
 header {
@@ -83,7 +84,6 @@ header {
   box-shadow: 0 0 12px rgba(0,0,0,0.25);
   width: fit-content;
   margin: 0 auto;
-
   padding: 8px;
   border-radius: 8px;
 }
@@ -233,6 +233,8 @@ main {
 .main-examples {
 	display: flex;
 	justify-content: space-between;
+	gap: 10px;               /* Расстояние между картинками */
+    width: 100%;             /* Контейнер занимает всю доступную ширину */
 }
 
 .main-examples-container {
@@ -242,9 +244,11 @@ main {
 }
 
 .main-examples-container img {
-	width: 250px;
-	height: 250px;
+	width: 100%;
+	max-width: 250px;
+	aspect-ratio: 1 / 1; /* Делает элемент квадратным (современный подход) */
 	border-radius: 24px;
+	box-shadow: 0 0 2px rgba(0,0,0,0.15);
 }
 
 .main-advantages {
@@ -252,6 +256,7 @@ main {
 	justify-content: space-between;
 	background-color: #F0F7FF;
 	border-radius: 24px;
+	box-shadow: 0 0 2px rgba(0,0,0,0.15);
 }
 
 .main-items {
@@ -260,16 +265,11 @@ main {
 	box-sizing: border-box;
 }
 
-.main-img-examples {
-	width: 300px;
-    height: 300px;
-	border-radius: 24px;
-}
-
 .main-img-bullets {
 	width: 100px;
     height: 100px;
 	border-radius: 16px;
+	box-shadow: 0 0 2px rgba(0,0,0,0.15);
 }
 
 .main-items-title {
