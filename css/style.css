@@ -72,7 +72,7 @@ header, main, section, footer {
   max-width: 80%; /* не шире экрана на мобильных */
   margin: 12px auto; /* центрирование */
   padding: 32px; /* отступы по бокам */
-  background: #E1EFFA;
+  background: #E1EFFAF8;
   border-radius: 32px;
   box-shadow: 0 0 3px rgba(0,0,0,0.4);
 }
