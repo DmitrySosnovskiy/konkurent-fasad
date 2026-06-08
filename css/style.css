@@ -68,7 +68,7 @@ body::before {
 }
 
 header, main, section, footer {
-  width: 1300px; /* фиксированная ширина */
+  max-width: 1300px; /* фиксированная ширина */
   max-width: 80%; /* не шире экрана на мобильных */
   margin: 12px auto; /* центрирование */
   padding: 32px; /* отступы по бокам */
@@ -275,4 +275,28 @@ main {
 
 .main-items-title {
 	font-weight: 500;
+}
+
+@media (max-width: 768px) {
+	body {
+		font-size: 11px;
+	}
+	h1 {
+		font-size: 36px;
+	}
+	h2 {
+	font-size: 18px;
+	}
+}
+
+@media (max-width: 430px) {
+	body {
+		font-size: 7px;
+	}
+	h1 {
+		font-size: 25px;
+	}
+	h2 {
+	font-size: 11px;
+	}
 }
