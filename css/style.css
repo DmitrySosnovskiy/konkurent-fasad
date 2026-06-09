@@ -46,9 +46,9 @@ body::before {
   
   /* Растягиваем по ширине, высота — какая получится по пропорциям */
   background-image: url("../img/background.jpg");
-  background-size: 100% auto; 
+  background-size: cover; 
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: top right;
   z-index: -1;
 
   /* Высота фона будет зависеть от ширины экрана и пропорций картинки */
