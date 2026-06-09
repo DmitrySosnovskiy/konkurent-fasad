@@ -70,12 +70,11 @@ body::before {
 }
 
 header, main, section, footer {
-  max-width: 1300px; /* фиксированная ширина */
   max-width: 80%; /* не шире экрана на мобильных */
   margin: 12px auto; /* центрирование */
   padding: 2.46vw; /* отступы по бокам */
   background: #E1EFFAF8;
-  border-radius: 32px;
+  border-radius: 2vw;
   box-shadow: 0 0 3px rgba(0,0,0,0.4);
 }
 
@@ -273,7 +272,7 @@ main {
 	/* max-width: 150px; */
 	width: 35%;
     aspect-ratio: 1 / 1; /* Делает элемент квадратным (современный подход) */
-	border-radius: 16px;
+	border-radius: 16%;
 	box-shadow: 0 0 2px rgba(0,0,0,0.15);
 }
 
@@ -327,6 +326,12 @@ main {
 	/* .main-img-bullets { */
 		/* width: 50%; */
 	/* }	 */
+}
+
+@media (max-width: 640px) {
+	header {
+		display: none;
+	}
 }
 
 @media (max-width: 430px) {
